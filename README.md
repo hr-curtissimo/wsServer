@@ -18,39 +18,20 @@ See Autobahn [report](https://theldus.github.io/wsServer/autobahn) and the
 
 ## Building
 
-wsServer only requires a C99-compatible compiler, and optionally Doxygen to build
-the docs. The build process comes in two flavors: pure makefile or CMake.
+wsServer only requires a C99-compatible compiler, like the GNU C Compiler.
 
 ### Make
-The preferred way to build wsServer on Linux environments. This also automatically
-builds an example file or a ready-to-use fuzzy version (see [here](doc/FUZZING.md) for
-details):
+The preferred way to build wsServer with GNU make. Make sure you have GNU Make
+installed for your operating system and distribution. Then, run one of the
+following commands, the one for your environment.
+
 ```bash
-git clone https://github.com/Theldus/wsServer
-cd wsServer/
+# Linuxes
 make
 
-# Optionally, a user can also install wsServer into the system,
-# either on default paths or by providing PATH or DESTDIR env
-# vars to the makefile.
-
-make install # Or make install DESTDIR=/my/folder/
+# macOS
+CC=gcc-11 gmake 
 ```
-
-### CMake
-CMake enables the user to easily build wsServer in others environments other than Linux
-and also allows the use of an IDE to build the project automatically. If that's
-your case:
-```bash
-git clone https://github.com/Theldus/wsServer
-cd wsServer/
-mkdir build && cd build/
-cmake ..
-make
-./send_receive # Waiting for incoming connections...
-```
-
-in both cases, a statically lib (libws.a) will be generated.
 
 ## Why to complicate if things can be simple?
 
